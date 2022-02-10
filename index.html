@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+
+        <title>Bootstrap 4 video background</title>
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+        <!-- Bootstrap CSS CDN -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous" />
+
+        <!-- Our Custom CSS -->
+<!--        <link rel="stylesheet" href="style.css" />-->
+
+        <!-- Font Awesome JS -->
+        <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+        <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+
+        <style>
+
+            /*
+            *
+            * ==========================================
+            * CUSTOM UTIL CLASSES
+            * ==========================================
+            *
+            */
+            
+            header {
+                position: relative;
+                background-color: black;
+                height: 75vh;
+                min-height: 25rem;
+                width: 100%;
+                overflow: hidden;
+            }
+
+            header video {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                min-width: 100%;
+                min-height: 100%;
+                width: auto;
+                height: auto;
+                z-index: 0;
+                -ms-transform: translateX(-50%) translateY(-50%);
+                -moz-transform: translateX(-50%) translateY(-50%);
+                -webkit-transform: translateX(-50%) translateY(-50%);
+                transform: translateX(-50%) translateY(-50%);
+            }
+
+            header .container {
+                position: relative;
+                z-index: 2;
+            }
+
+            header .overlay {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                background-color: black;
+                opacity: 0.5;
+                z-index: 1;
+            }
+
+            @media (pointer: coarse) and (hover: none) {
+                header {
+                    background: url('https://source.unsplash.com/XT5OInaElMw/1600x900') black no-repeat center center scroll;
+                }
+                header video {
+                    display: none;
+                }
+            }            
+
+            .video-background-holder {
+                position: relative;
+                background-color: black;
+                height: calc(100vh - 72px);
+                min-height: 25rem;
+                width: 100%;
+                overflow: hidden;
+            }
+
+/*
+            .video-background-holder video {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                min-width: 100%;
+                min-height: 100%;
+                width: auto;
+                height: auto;
+                z-index: 0;
+                -ms-transform: translateX(-50%) translateY(-50%);
+                -moz-transform: translateX(-50%) translateY(-50%);
+                -webkit-transform: translateX(-50%) translateY(-50%);
+                transform: translateX(-50%) translateY(-50%);
+            }
+
+            .video-background-content {
+                position: relative;
+                z-index: 2;
+            }
+
+            .video-background-overlay {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                background-color: black;
+                opacity: 0.5;
+                z-index: 1;
+            }
+*/
+
+        </style>
+
+    </head>
+
+    <body>
+        
+        <header>
+
+            <div class="overlay"></div>
+
+            <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+                <source src="https://storage.googleapis.com/coverr-main/mp4/Mt_Baker.mp4" type="video/mp4">
+            </video>
+
+            <div class="container h-100">
+                <div class="d-flex h-100 text-center align-items-center">
+                    <div class="w-100 text-white">
+                        <h1 class="display-3">Video Header</h1>
+                        <p class="lead mb-0">With HTML5 Video and Bootstrap 4</p>
+                    </div>
+                </div>
+            </div>
+
+        </header>
+
+        <section class="my-5">
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 mx-auto">
+                        <p>The HTML5 video element uses an mp4 video as a source. Change the source video to add in your own background! The header text is vertically centered using flex utilities that are build into Bootstrap 4.</p>
+                        <p>The overlay color can be changed by changing the <code>background-color</code> of the <code>.overlay</code> class in the CSS.</p>
+                        <p>Set the mobile fallback image in the CSS by changing the background image of the header element within the media query at the bottom of the CSS snippet.</p>
+                    </div>
+                </div>
+            </div>
+
+        </section>        
+
+        <!-- Demo navbar -->
+<!--
+        <nav class="navbar navbar-expand-lg navbar-light bg-white py-3 shadow-sm">
+
+            <div class="container">
+
+                <a href="#" class="navbar-brand"> <b>Navbar</b></a>
+                <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"><span class="navbar-toggler-icon"></span></button>
+
+                <div id="navbarSupportedContent" class="collapse navbar-collapse">
+
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active"><a href="#" class="nav-link">Home <span class="sr-only">(current)</span></a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">Link</a></li>
+                        <li class="nav-item dropdown"><a id="navbarDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle">Dropdown</a>
+                        <div aria-labelledby="navbarDropdown" class="dropdown-menu"><a href="#" class="dropdown-item">Action</a><a href="#" class="dropdown-item">Another action</a>
+                        <div class="dropdown-divider"></div><a href="#" class="dropdown-item">Something else here</a>
+                        </div>
+                        </li>
+                        <li class="nav-item"><a href="#" tabindex="-1" aria-disabled="true" class="nav-link disabled">Disabled</a></li>
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </nav>
+-->
+        <!-- End -->
+
+
+        <!-- Background video -->
+<!--
+        <div class="video-background-holder">
+
+            <div class="video-background-overlay"></div>
+
+            <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+                <source src="https://app.coverr.co/s3/mp4/Over-The-Crater.mp4" type="video/mp4">
+            </video>
+
+            <div class="video-background-content container h-100">
+                <div class="d-flex h-100 text-center align-items-center">
+                    <div class="w-100 text-white">
+                        <h1 class="display-4">Bootstrap 4 video background</h1>
+                        <p class="lead mb-0">With HTML5 Video and Bootstrap 4</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+-->
+        <!-- End -->
+
+        <!-- jQuery CDN - Slim version (=without AJAX) -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+        <!-- Popper.JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+
+        <!-- Bootstrap JS -->
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+
+    </body>
+
+</html>
